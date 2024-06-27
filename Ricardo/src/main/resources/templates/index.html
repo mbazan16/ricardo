@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +7,24 @@
 </head>
 <body>
     <h1>Bienvenido al trabajo</h1>
+    
     <div class="search-box">
         <form action="/buscador" method="GET">
             <input type="text" name="cadena" placeholder="Buscar por nombre">
             <input type="submit" value="Buscar">
         </form>
     </div>
+    
     <div class="form-container">
-    	<h2>Crear puesto de trabajo</h2>
+        <h2>Crear puesto de trabajo</h2>
         <form action="/trabajo" method="POST">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
             <br>
             <label for="tipo">Tipo:</label>
-            <input type="text" id="tipo" name="tipo" required>
+            <select id="tipo" name="tipo" required>
+                <option th:each="tipo : ${tiposTrabajo}" th:value="${tipo}" th:text="${tipo}"></option>
+            </select>
             <br>
             <input type="submit" value="Crear Trabajo">
         </form>

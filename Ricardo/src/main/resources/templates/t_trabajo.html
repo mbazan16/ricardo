@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Trabajo</title>
+</head>
+<body>
+    <h1>Detalles del Trabajo</h1>
+    <div>
+        <p><strong>Nombre:</strong> <span th:text="${trabajo.nombre}"></span></p>
+        <p><strong>Tipo:</strong> <span th:text="${trabajo.tipo}"></span></p>
+    </div>
+    <br>
+    <a href="/">Volver a la página principal</a>
+</body>
+</html>
