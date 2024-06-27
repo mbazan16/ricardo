@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscador de Trabajos</title>
+    <title th:text="#{title.buscador}"></title>
 </head>
 <body>
-    <h1>Lista de Trabajos</h1>
+    <h1 th:text="#{title.lista}" ></h1>
     <div th:each="trabajo : ${trabajos}">
         <p><strong>Nombre:</strong> <span th:text="${trabajo.nombre}"></span></p>
         <p><strong>Tipo:</strong> <span th:text="${trabajo.tipo}"></span></p>
         <hr>
     </div>
-    <a th:href="@{/}">Volver a la página principal</a>
+    <a th:href="@{/}" th:text="#{link.volver}"></a>
 </body>
 </html>
